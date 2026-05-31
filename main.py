@@ -59,7 +59,7 @@ def javob(message):
     bot.send_chat_action(chat_id, "typing")
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="meta-llama/llama-4-scout-17b-16e-instruct",
             messages=[
                 {"role": "system", "content": f"Sen EduBot — O'zbekiston maktab o'quvchilari uchun AI o'qituvchisan. Foydalanuvchi: {sinf} o'quvchisi, fan: {fan}. O'zbek tilida, oddiy va qiziqarli tilda javob ber. Misollar keltir."},
                 {"role": "user", "content": message.text}
