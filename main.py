@@ -4,6 +4,7 @@ from flask import Flask, request
 
 TELEGRAM_TOKEN = "8326889206:AAGtg2O0f4kYPpG7i2yh1CW-ydu2-n3ioPE"
 GROQ_API_KEY = "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"
+USERNAME = "edubot-uz"
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 client = Groq(api_key=GROQ_API_KEY)
@@ -78,7 +79,9 @@ def webhook():
 def index():
     return "EduBot ishlayapti!", 200
 
-if name == "main":
+if __name__ == "__main__":
+    import os
     bot.remove_webhook()
     bot.set_webhook(url=f"https://edubot-zj5y.onrender.com/{TELEGRAM_TOKEN}")
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
