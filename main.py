@@ -4,11 +4,10 @@ from flask import Flask, request
 
 TELEGRAM_TOKEN = "8326889206:AAGtg2O0f4kYPpG7i2yh1CW-ydu2-n3ioPE"
 GROQ_API_KEY = "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"
-USERNAME = "edubot-uz"
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 client = Groq(api_key=GROQ_API_KEY)
-app = Flask(__name__)
+app = Flask(name)
 
 user_data = {}
 
@@ -79,7 +78,7 @@ def webhook():
 def index():
     return "EduBot ishlayapti!", 200
 
-if __name__ == "__main__":
+if name == "main":
     bot.remove_webhook()
-    bot.set_webhook(url=f"https://{USERNAME}.pythonanywhere.com/{TELEGRAM_TOKEN}")
+    bot.set_webhook(url=f"https://edubot-zj5y.onrender.com/{TELEGRAM_TOKEN}")
     app.run(host='0.0.0.0', port=5000)
