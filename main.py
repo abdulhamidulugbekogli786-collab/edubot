@@ -7,7 +7,7 @@ GROQ_API_KEY = "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"
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 client = Groq(api_key=GROQ_API_KEY)
-app = Flask(name)
+app = Flask(__name__)
 
 user_data = {}
 
